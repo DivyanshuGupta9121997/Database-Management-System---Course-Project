@@ -46,7 +46,6 @@ def admin():
             if ('addr3' in session.keys()) and session['addr3']==request.remote_addr:
                 return(render_template('1.0_admin.html',task1=task1,task2=task2,task3=task3,task4=task4,task5=task5,task6=task6,task7=task7))
             if res['password']=="password" and res['admin']=="admin":
-                print("saaaaaaahi")
                 session['admin']=res['admin']
                 session['addr3']=request.remote_addr
                 print("ADMIN LOGGED IN")
@@ -71,19 +70,14 @@ def admin():
         elif 'itemid02' in res:
             deleteItem2(res)
         elif 'orderid3' in res:
-            print("yes")
             service_allotment(res)
         elif 'dname' in res:
-            print("saahi hai bhai")
             add_sdealer(res)
         elif 'dname1' in res:
-            print("saahi hai bhai")
             add_bdealer(res)
         elif 'curr1' in res:
-            print(" curr1 hai ")
             updatecurr1(res)
         elif 'curr2' in res:
-            print(" curr2 hai ")
             updatecurr2(res)
         return render_template('1.0_admin.html',task1=task1,task2=task2,task3=task3,task4=task4,task5=task5,task6=task6,task7=task7)
     else:
@@ -98,7 +92,6 @@ def updatecurr1(res):
         c=connect("127.0.0.1","root","asd","project")
         d=c.cursor()
         #i=random.randint(101,10001)
-        print("hello---------------------------")
         d.execute("""update employee set curr_avail=1 where emp_id={} """.format(res['empid']))
         print("end")
         c.commit()
@@ -113,7 +106,6 @@ def updatecurr2(res):
         c=connect("127.0.0.1","root","asd","project")
         d=c.cursor()
         #i=random.randint(101,10001)
-        print("hello---------------------------")
         d.execute("""update vehicle set curr_avail=1 where vehicle_id={} """.format(res['vid']))
         print("end")
         c.commit()
