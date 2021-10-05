@@ -1,5 +1,6 @@
 from MySQLdb import connect
 
+# Make the require tables
 def maketables():
     try:
         print("ererere")
@@ -51,11 +52,9 @@ def customer(cur):
 
 					);
 	''')
-    print("customer")
     pass
 
 def employee(cur):
-    print("employee")
     cur.execute(r'''
 				create table if not exists employee
 					(
@@ -88,7 +87,6 @@ def sanitary_item(cur):
     pass
 
 def building_material(cur):
-    print("building_material")
     cur.execute(r'''
 				create table if not exists building_material
 					(
@@ -103,7 +101,6 @@ def building_material(cur):
     pass
 
 def sanitaryware_dealer(cur):
-    print("sanitaryware_dealer")
     cur.execute(r'''
 				create table if not exists sanitaryware_dealer
 					(
@@ -118,7 +115,6 @@ def sanitaryware_dealer(cur):
     pass
 
 def building_material_dealer(cur):
-    print("building_material_dealer")
     cur.execute(r'''
 				create table if not exists building_material_dealer
 					(
@@ -133,7 +129,6 @@ def building_material_dealer(cur):
     pass
 
 def output_trans(cur):
-    print("output_trans")
     cur.execute(r'''
 				create table if not exists output_trans
 					(
@@ -149,7 +144,6 @@ def output_trans(cur):
     pass
 
 def orders(cur):
-    print("order")
     cur.execute(r'''
 				create table if not exists orders
 					(
@@ -166,7 +160,6 @@ def orders(cur):
 
 #
 def purchase_deal1(cur):
-    print("purchase_deal1")
     cur.execute(r'''
 				create table if not exists purchase_deal1
 					(
@@ -186,7 +179,6 @@ def purchase_deal1(cur):
     pass
 
 def purchase_deal2(cur):
-    print("purchase_deal2")
     cur.execute(r'''
 				create table if not exists purchase_deal2
 					(
@@ -206,7 +198,6 @@ def purchase_deal2(cur):
     pass
 
 def input_trans(cur):
-    print("input_trans")
     cur.execute(r'''
 				create table if not exists input_trans
 					(
@@ -227,7 +218,6 @@ def input_trans(cur):
     pass
 
 def service(cur):
-    print("service")
     cur.execute(r'''
 				create table if not exists service
 					(
@@ -247,7 +237,6 @@ def service(cur):
     pass
 
 def includes_1(cur):
-    print("includes_1")
     cur.execute(r'''
 				create table if not exists includes_1
 					(
