@@ -893,6 +893,22 @@ def func4():
     except:
         return False
 
+ def func5():
+    try:
+        print("ererere")
+        c=connect("dg97.mysql.pythonanywhere-services.com","dg97","github!1!1","dg97$project")
+        print("ddddddd")
+        d=c.cursor()
+        d.execute("""select email from customer """)
+        results = d.fetchall()
+        print("end")
+        print(results)
+        c.commit()
+        c.close()
+        return results
+    except:
+        return False
+
 
 
 #-------------------------------------------------------------------------------
