@@ -899,6 +899,22 @@ def func4():
     except:
         return False
 
+def func5():
+    try:
+        print("ererere")
+        c=connect("127.0.0.1","root","asd","project")
+        print("ddddddd")
+        d=c.cursor()
+        d.execute("""select email from customer """)
+        results = d.fetchall()
+        print("end")
+        print(results)
+        c.commit()
+        c.close()
+        return results
+    except:
+        return False
+
 
 
 #-------------------------------------------------------------------------------
