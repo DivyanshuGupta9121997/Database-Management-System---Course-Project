@@ -203,6 +203,21 @@ def getsan():
         return results
     except:
         return False
+
+def getsanForAYear():
+    try:
+        c=connect("127.0.0.1","root","asd","project")
+        d=c.cursor()
+        #select * from orders where order_date between adddate(now(),-365) and now();
+        d.execute("""select * from sanitary_item """)
+        results = d.fetchall()
+        print("end")
+        print(results)
+        c.commit()
+        c.close()
+        return results
+    except:
+        return False
 def getbul():
     try:
         c=connect("127.0.0.1","root","asd","project")
